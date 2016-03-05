@@ -27,7 +27,7 @@ var state = getInitialState();
 /**
  * Create and export the AppAppStore.
  */
-var AppStore = assign({}, EventEmitter.prototype, {
+var RouteStore = assign({}, EventEmitter.prototype, {
 
   /**
    * Get the full game state.
@@ -65,7 +65,7 @@ var AppStore = assign({}, EventEmitter.prototype, {
 AppDispatcher.register(function(action) {
   switch(action.actionType) {
     case ActionTypes.UPDATE_ROUTE:
-      // console.log('Action Fired:', ActionTypes.UPDATE_ROUTE);
+      console.log('Action Fired:', ActionTypes.UPDATE_ROUTE);
       
       break;      
 
@@ -73,4 +73,4 @@ AppDispatcher.register(function(action) {
   }
 });
 
-export default AppStore;
+export default RouteStore;

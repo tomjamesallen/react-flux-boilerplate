@@ -2,6 +2,6 @@ import keyMirror from 'keymirror';
 
 export default keyMirror({
 
-  EXAMPLE_ACTION: null
+  UPDATE_ROUTE: null
 
 });

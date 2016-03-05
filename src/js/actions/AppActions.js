@@ -7,9 +7,10 @@ import ActionTypes from '../constants/ActionTypes';
 
 export default {
 
-  exampleAction() {
+  updateRoute(params) {
     AppDispatcher.dispatch({
-      actionType: ActionTypes.EXAMPLE_ACTION
+      actionType: ActionTypes.UPDATE_ROUTE,
+      params: params
     });
   }
 

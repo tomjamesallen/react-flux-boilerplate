@@ -35,13 +35,16 @@ export default React.createClass({
    * @return {object}
    */
   render() {
+    // console.log(this.props.params);
     return (
       <div className="app-wrapper">
         <h1>React / Flux Boilerplate</h1>
-        <Link to="/">Home</Link>
-        {' '}
-        <Link to="/about">About</Link>
-        {this.props.children ? React.cloneElement(this.props.children, {state: this.state}) : null}
+        <Link to="/">Home</Link><br/>
+        <Link to="/test">/test</Link><br/>
+        <Link to="/test1">/test1</Link><br/>
+        <Link to="/test/test">/test/test</Link><br/>
+        <Link to="/test/test1">/test/test1</Link><br/>
+        <Link to="/test/test/test">/test/test/test</Link><br/>
         
         <div>
           <button onClick={this._onClickExample}>Action example</button>
