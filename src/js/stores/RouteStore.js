@@ -16,12 +16,18 @@ const ENV = process.env.NODE_ENV;
 
 function getInitialState() {
   return {
-    
+    params: {}
   }
 };
 
 // Create state var and set to initial state.
 var state = getInitialState();
+
+function updateRoute(params) {
+  state.params = params;
+  // history.replace('/products/something');
+  RouteStore.emitChange();
+}
 
 
 /**
@@ -66,6 +72,7 @@ AppDispatcher.register(function(action) {
   switch(action.actionType) {
     case ActionTypes.UPDATE_ROUTE:
       console.log('Action Fired:', ActionTypes.UPDATE_ROUTE);
+      updateRoute(action.params);
       
       break;      
 

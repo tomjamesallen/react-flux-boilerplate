@@ -2,40 +2,30 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import AppStore from '../stores/AppStore';
+import RouteStore from '../stores/RouteStore';
 import AppActions from '../actions/AppActions';
+import ConnectToStores from '../mixins/ConnectToStores';
 
 /**
- * Fetch state for AppStore.
+ * Fetch state for Stores.
  * @return {object} state
  */
-function getAllState() {
-  return AppStore.getState();
+function getState() {
+  return RouteStore.getState();
 };
 
 export default React.createClass({
 
-  getInitialState() {
-    return getAllState();
-  },
-
-  componentDidMount() {
-
-    // Set up our change listener.
-    AppStore.addChangeListener(this._onChange);
-  },
-
-  componentWillUnmount() {
-
-    // Remove change listener if un-mounting App.
-    AppStore.removeChangeListener(this._onChange);
-  },
+  mixins: [
+    ConnectToStores([AppStore, RouteStore], getState),
+  ],
 
   /**
    * Render the App component.
    * @return {object}
    */
   render() {
-    // console.log(this.props.params);
+    console.log(this.state);
     return (
       <div className="app-wrapper">
         <h1>React / Flux Boilerplate</h1>
