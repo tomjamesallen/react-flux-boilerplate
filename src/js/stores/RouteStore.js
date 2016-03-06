@@ -25,7 +25,6 @@ var state = getInitialState();
 
 function updateRoute(params) {
   state.params = params;
-  // history.replace('/products/something');
   RouteStore.emitChange();
 }
 
